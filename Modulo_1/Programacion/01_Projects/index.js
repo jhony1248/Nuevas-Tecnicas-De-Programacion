@@ -1,32 +1,21 @@
 const express = require('express');
+
 // genero una aplicacion express
-const app = express()
-// End point
-app.get('/',(req, res) =>{
-    res.send("Hola mundo con express3s")
-})
+const app = express();
 
-app.get('/saludo', (req, res) =>{
-    // req.query
-    //console.log(req.query);
-    const {query} =req;
+// Router
+const {RouterIndex} = require('./Routes/index');
 
-    //const nombre = req.query.nombre
-    //const apellido = req.query.apellido
+app.use("/", RouterIndex)
+//app.use("/user", RouterIndex)
+//app.use("/user/data", RouterIndex)
 
-    res.json({
-        saludo:`Hola soy ${query.nombre} ${query.apellido}`,
-    });
-});
+/*
+    "/" + "/" = "//" => "/"
+    "/" + "/saludo" = //saludo => "/saludo"
+    "/" + /saludo/:nombre =//saludo/:nombre => /saludo/:nombre
+*/
 
-
-app.get('/saludo/:nombre', (req, res) => {
-    const { params : { nombre } } = req
-    res.json({
-        nombre:nombre
-    });
-});
-
-app.listen(3000,() => {
+app.listen(3000, () => {
     console.log("servidor escuchando en htpp://localhost:3000");
 })
