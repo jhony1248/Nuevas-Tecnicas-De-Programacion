@@ -4,8 +4,7 @@
   "description": "uso de NPM",
   "main": "index.js",
   "scripts": {
-    "dev":"nodemon"
-
+    "dev": "nodemon"
   },
   "keywords": [
     "practica",
@@ -14,7 +13,8 @@
   "author": "Jhony H.",
   "license": "MIT",
   "dependencies": {
-    "express": "4.17.1"
+    "express": "4.17.1",
+    "joi": "17.4.0"
   },
   "devDependencies": {
     "nodemon": "2.0.7"

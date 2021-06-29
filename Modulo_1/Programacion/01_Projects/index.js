@@ -22,7 +22,7 @@ app.use("/", RouterIndex)
 ....Deber
 */
 
-const {RouterIndex} = require('./Routes/deber_video.js');
+const {RouterIndex} = require('./Routes/index');
 
 app.use("/", RouterIndex)
 
